@@ -1,0 +1,916 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima&display=swap');
+:root {
+    --albastru:rgb(60, 78, 114);
+    --negru: rgb(0, 0, 0);
+    --alb: rgb(255, 255, 255);
+    --albinchis: rgb(192, 219, 226);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--albinchis);
+
+}
+
+html {
+    font-family: 'Arima', cursive;
+    scroll-behavior: smooth;
+}
+
+/* Mobile First */
+
+
+.animation {
+    position: absolute;
+    top: 0;
+    min-width: 100%;
+    min-height: 100vh;
+    background-color: var(--alb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: hidden; */
+    z-index: 11;
+}
+
+/* Mobile Navigation */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transition: all .5s ease-in;
+    background-color: var(--alb);
+    border-bottom: 2px solid var(--negru);
+}
+
+.logo img {
+    max-width: 8em;
+}
+
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+    z-index: 15;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--negru);
+    transition: all .5s ease-in;
+}
+
+.nav-item.active {
+    top: 80px;
+    background: var(--alb);
+    border-bottom: 2px solid var(--negru);
+}
+
+.nav-item {
+    position: fixed;
+    min-height: auto;
+    min-width: 100%;
+    top: -100%;
+    padding: 10px;
+    left: 0;
+    background: transparent;
+    transition: all .5s ease-in-out;
+    
+}
+
+.nav-item .list-item {
+    position: relative;
+    list-style: none;
+    padding: 10px;
+    transition: all .2s ease-in;
+}
+
+.nav-item .list-item:hover {
+    border-left: 2px solid var(--alb);
+}
+
+.nav-item .list-item a {
+    text-decoration: none;
+    color: var(--negru);
+    font-weight: 400;
+    font-size: 1.1rem;
+    transition: all .2s ease-in;
+}
+
+.list-item #social {
+    font-size: 2rem;
+}
+
+.list-item a:hover {
+    color: rgb(182, 182, 182);
+}
+
+.hamburger-menu.active .bar:nth-child(2){
+    opacity: 0;
+}
+.hamburger-menu.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);    
+}
+.hamburger-menu.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);    
+}
+
+#hiddenlink {
+    display: none;
+}
+
+
+/* Hero Section */
+
+.hero {
+    background-image: linear-gradient(rgba(129, 118, 95, 0.75), rgb(192, 219, 226, .3)) ,url('../images/hero-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-X: center;
+    min-width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border-radius: 0 0 0 550px;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
+
+.hero h2 {
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    letter-spacing: .1rem;
+}
+
+.hero a {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    background: var(--negru);
+    border-radius: 10px;
+    color: var(--alb);
+    transition: all .3s ease-in;
+}
+
+.hero a:hover {
+    border: 2px solid var(--negru);
+    background: transparent;
+    color: var(--negru);
+}
+
+
+/* Jump button */
+
+.jumpBtn {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.jumpBtn #jump {
+    display: none;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    color: var(--negru);
+    cursor: pointer;
+}
+
+.jumpBtn #jump:hover {
+    background: var(--negru);
+    color: var(--alb);
+}
+
+
+/* Furnizori section */
+
+.furnizori {
+    min-width: 100%;
+    min-height: 300px;
+    background-color: var(--albinchis);   
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-furn {
+    min-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.titluFurnizori {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titluFurnizori h1 {
+    color: var(--negru);
+    letter-spacing: 2px;
+}
+
+.titluFurnizori h1::after {
+    content: '';
+    display: block;
+    background-color: var(--negru);
+    width: 65%;
+    height: 3px;
+}
+
+
+/* Despre Noi */
+
+.despreNoi {
+    min-width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--alb);
+}
+
+.container-despre {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.textInfo {
+    text-align: justify;
+}
+
+.textInfo p, .textInfo h1 {
+    user-select: none;
+}
+
+
+.infoImages {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    border-radius: 10px 50px 10px 50px;
+    background: var(--albinchis);
+    box-shadow: 2px 0px 10px 5px rgba(192, 219, 226, .8);
+
+}
+
+.infoImages img {
+    max-width: 100%;
+    border-radius: 20px 50px 20px 50px;
+    
+}
+
+
+
+/* Testimoniale */
+
+.testimoniale {
+    min-width: 100%;
+    min-height: auto;
+    padding: 10px;
+    background-color: var(--albinchis);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-testimoniale {
+    max-width: 100%;
+}
+
+.titluTestimoniale {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titluTestimoniale h1 {
+    color: var(--negru);
+}
+
+.titluTestimoniale h1::after {
+    content: '';
+    display: block;
+    background-color: var(--negru);
+    width: 65%;
+    height: 3px;
+    
+}
+
+.testimonial-content {
+    padding: 10px;
+    min-width: 100%;
+    min-height: auto;
+}
+
+.container-testimoniale {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container-testimoniale p {
+    user-select: none;
+}
+
+.informatiiclient {
+    display: flex;
+    align-items: center;
+}
+
+.informatiiclient h1 {
+    padding-left: 10px;
+}
+
+.container-testimoniale p {
+    text-align: justify;
+}
+
+.owl-dots {
+    text-align: center;
+}
+
+.owl-dots button {
+    background-color: var(--alb) !important;
+    width: 10px;
+    height: 10px;
+    border-radius: 26px;
+    margin: 0 5px;
+    transition: .3s;
+}
+
+.owl-dots button.active {
+    width: 30px;
+}
+
+.owl-item {
+    padding: 0 5px;
+} 
+
+
+/* Categorii de produse */
+
+.catProduse {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    padding: 10px;
+    background-color: var(--alb);
+}
+
+.mainProduse {
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titluProduse {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.containerProduse {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.containerProduse img {
+    width: 200px;
+    box-shadow: 2px 0px 10px 5px rgba(194, 205, 207, 0.8);
+}
+
+.titluProduse h1 {
+    color: var(--negru);
+}
+
+.titluProduse h1::after {
+    content: '';
+    display: block;
+    background-color: var(--negru);
+    width: 65%;
+    height: 3px;
+    
+}
+
+/* Portofoliu */
+
+.portofoliu {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    background-color: var(--albinchis);
+}
+
+
+.mainPortofoliu {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titluPortofoliu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.titluPortofoliu h1 {
+    color: var(--negru);
+}
+
+.titluPortofoliu h1::after {
+    content: '';
+    display: block;
+    background-color: var(--negru);
+    width: 65%;
+    height: 3px;
+    
+}
+
+.containerPortofoliu {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    justify-self: center;
+    gap: 10px;
+    max-width: 100%;
+}
+
+.containerPortofoliu img{
+    max-width: 100%;
+    border-radius: 10px 50px 10px 50px;
+    box-shadow: 2px 0px 10px 5px rgba(136, 146, 148, 0.8);
+}
+
+.gridItem:nth-child(3) {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* Contact */
+
+.contact {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/Portofoliu/portofoliu4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mainContact {
+    min-width: 100%;
+}
+
+.titluContact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.titluContact h1 {
+    color: var(--albinchis);
+}
+
+.titluContact h1::after {
+    content: '';
+    display: block;
+    background-color: var(--albinchis);
+    width: 65%;
+    height: 3px;
+    
+}
+
+.container-contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-contact form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgba(192, 219, 226, .8);
+}
+
+.container-contact form input, .container-contact form textarea {
+    width: 100%;
+    height: 2.5rem;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid var(--negru);
+    color: var(--negru);
+} 
+
+.container-contact form input::placeholder, .container-contact form textarea::placeholder {
+    color: var(--negru);
+
+}
+
+.container-contact form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius:  5px;
+    cursor: pointer;
+    background-color: var(--alb);
+    transition: all .3s;
+    font-family: 'Arima', cursive;
+}
+
+.container-contact form button:hover {
+    background-color: var(--albastru);
+    color: var(--alb);
+}
+
+.desprenoi {
+    display: flex;
+    flex-direction: column;
+}
+
+.sau {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--albinchis);
+    margin: 20px 0;
+}
+
+.sau h1 {
+    color: var(--negru);
+}
+
+.desprenoi a {
+    text-decoration: none;
+    color: var(--alb);
+}
+
+.desprenoi a i {
+    font-size: 1.5rem;
+    padding-right: 10px;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 10px;
+    background-color: var(--albinchis);
+}
+ 
+footer .linkuri .list-item, footer .retele_sociale .list-item  {
+    list-style: none;
+}
+
+footer .linkuri .list-item a, footer .retele_sociale .list-item a {
+    text-decoration: none;
+    color: var(--negru);
+}
+
+footer .retele_sociale .list-item a i {
+    padding-right: 10px;
+}
+
+
+
+
+@media (min-width: 500px) {
+    .infoImages {
+        background: var(--albinchis);
+        justify-content: end;
+    }
+
+    /* Portofoliu */
+
+    .mainPortofoliu {
+        max-width: 75%;
+    }
+
+    .containerPortofoliu {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100%;
+    }
+    
+    .gridItem:nth-child(1) {
+        background-image: url('../images/Portofoliu/portofoliu3.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        grid-column: span 2;
+        grid-row: span 2;
+        min-width: 100%;
+        min-height: 100%;
+        border-radius: 10px 50px 10px 50px;
+        box-shadow: 2px 0px 10px 5px rgba(136, 146, 148, 0.8);
+    }
+    
+    .gridItem:nth-child(1) img {
+        display: none;
+    }
+
+    /* Furnizori */
+    
+    .container-furn {
+        justify-content: space-between;
+    }
+
+    /* Despre noi */
+
+    .container-despre {
+        justify-content: space-between;
+    }
+
+    /* Footer */
+
+    footer {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+}
+
+/* Tablet Devices */
+
+@media (min-width: 768px) {
+
+    /* nav menu */
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-item {
+        position: relative;
+        top: 0%;
+        display: inline-flex;
+        height: 0%;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        min-width: 10px;
+    }
+    .nav-item.active {
+        display: none;
+    }
+
+    .nav-item .list-item:hover {
+        border: none;
+    }
+
+    .nav-item .list-item a{
+        font-size: 1.25rem;
+    }
+
+
+    /* Hero section  */
+
+    .hero h1 {
+        font-size: 5.5rem;
+        line-height: 5.5rem;
+        letter-spacing: .3rem;
+
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+        letter-spacing: .2rem;
+    }
+
+    .hero a {
+        font-size: 1.4rem;
+        padding: 15px 30px;
+    }
+
+
+    /* Despre Noi */
+
+    .despreNoi {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .container-despre {
+        flex-direction: row;
+    }
+
+    .textInfo {
+        padding: 10px;
+        max-width: 50%;
+    }
+
+    .infoImages {
+        max-width: 80%;
+    }
+
+
+    /* Produse */
+
+    .catProduse {
+        min-height: 100vh;
+    }
+
+    .containerProduse {
+        grid-template-columns: repeat(3, 1fr);
+        /* margin-top: 100px; */
+    }
+
+
+    /* Contact */
+
+    .contact {
+        background-image: none;
+        background-color: var(--alb);
+        justify-content: space-around;
+    }
+
+    .container-contact {
+        flex-direction: row;
+        height: 60vh;
+    }
+
+    .container-contact form {
+        width: 50%;
+        padding: 10px;
+        background-color: var(--albinchis);
+    }
+
+    .titluContact h1 {
+        color: var(--negru);
+    }
+    
+    .titluContact h1::after {
+        background-color: var(--negru);
+    }
+
+
+
+    /* Despre noi */
+
+    .desprenoi {
+        width: 50%;
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/Portofoliu/portofoliu4.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .desprenoi a {
+        padding: 10px;
+        text-align: center;
+    }
+
+
+    /* Testimoniale Carousel*/
+
+    .owl-item {
+        padding: 0 10px;
+    } 
+
+}
+
+/* Desktop Mode */
+
+@media (min-width: 1024px) { 
+    
+    /* Navigation */
+
+    .navigation {
+        padding: 0 13%;
+    }
+
+
+    /* Furnizori */
+    
+    .container-furn {
+        min-width: 75%;
+    }
+
+
+    /* Despre noi */
+
+    .container-despre {
+        max-width: 75%;
+        flex-direction: row;
+    }
+
+
+    /* Testimoniale */
+
+    .main-testimoniale {
+        max-width: 75%;
+    }
+
+
+    /* Produse */
+
+    .mainProduse {
+        min-width: 75%;
+    }
+
+    .containerProduse {
+        margin-top: 0;
+    }
+
+    .containerProduse img {
+        width: 250px;
+    }
+
+
+    /* Portofoliu */
+
+    .mainPortofoliu {
+        min-width: 75%;
+    }
+
+
+    /* Contact */
+
+    .mainContact {
+        min-width: 75%;
+    }
+
+}
+
+/* Large screen */
+@media (min-width: 1280px) {
+    .containerPortofoliu {
+        padding: 10%;
+    }
+}
